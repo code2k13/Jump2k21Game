@@ -1,4 +1,7 @@
+![game-ani.gif](game-ani.gif)
+
 ## What is Platformer2100  
+
 It is a simple platformer (game) written using [Phaser](https://phaser.io/) game engine in javacript.
 You can play this game using arrow keys on a computer or use onscreen buttons to play the game.
 The game has been designed as [Progressive Web Application PWA](https://en.wikipedia.org/wiki/Progressive_web_application), which means you can install it like a mobile app.

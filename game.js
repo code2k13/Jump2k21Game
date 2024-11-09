@@ -10,6 +10,7 @@ var gameStarted = false;
 var cursors = null;
 var base = null;
 var player = null; 
+var game_fence = null;
 
 var config = {
     type: Phaser.AUTO,
@@ -135,7 +136,7 @@ function handleCollisions(g) {
     });
 
 
-    g.physics.add.collider(enemies, fence, (en, fe) => {
+    g.physics.add.collider(enemies, game_fence, (en, fe) => {
         let a = en.flipX
 
         if (a) {
@@ -169,7 +170,7 @@ function create() {
 
     platforms = this.physics.add.staticGroup();
     stars = this.physics.add.staticGroup();
-    fence = this.physics.add.staticGroup();
+    game_fence = this.physics.add.staticGroup();
     bombs = this.physics.add.group({ allowGravity: false });
     enemies = this.physics.add.group({ allowGravity: false })
 
@@ -186,8 +187,8 @@ function create() {
 
     for (var i = 1; i < 8; i++) {
         platforms.create(i * 90, i * 70, 'ground').setScale(0.5, 0.16).refreshBody();
-        fence.create(i * 90 - 90, i * 70 - 20, 'blank').setScale(0.5, 1).refreshBody();
-        fence.create(i * 90 + 60, i * 70 - 20, 'blank').setScale(0.5, 1).refreshBody();
+        game_fence.create(i * 90 - 90, i * 70 - 20, 'blank').setScale(0.5, 1).refreshBody();
+        game_fence.create(i * 90 + 60, i * 70 - 20, 'blank').setScale(0.5, 1).refreshBody();
 
         let enemy = enemies.create(i * 90 - 70, i * 70 - 25, 'enemy')
         enemy.setScale(0.23)
